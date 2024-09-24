@@ -1,10 +1,25 @@
 import * as React from "react"
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card"
-import Image from "next/image"
+import Image, { StaticImageData } from "next/image";
 import { Button } from "./ui/button"
 
+interface SkillCardProps {
+  data: {
+    image: StaticImageData;
+    author: string;
+  };
+}
 
-export function SkillCard({ data }: any) {
+interface ProjectCardProps {
+  data: {
+    title: string;
+    description: string;
+    technologies: string;
+    github: string;
+    url?: string; // optional URL for the project
+  };
+}
+export function SkillCard({ data }: SkillCardProps) {
   return (
     <Card className=" bg-white w-[200px] h-[200px] p-2 flex flex-col items-center justify-center justify-between hover:animate-spin">
       <Image
@@ -19,7 +34,7 @@ export function SkillCard({ data }: any) {
   );
 }
 
-export function ProjectCard({ data }: any) {
+export function ProjectCard({ data }: ProjectCardProps) {
   return (
     <Card className="w-[350px] h-auto bg-gray-700 ">
       <CardHeader >

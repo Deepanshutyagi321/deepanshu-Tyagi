@@ -1,10 +1,8 @@
 import * as React from "react"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card"
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card"
 import Image from "next/image"
 import { Button } from "./ui/button"
-import { Label } from "./ui/label";
-import { Input } from "./ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
+
 
 export function SkillCard({ data }: any) {
   return (

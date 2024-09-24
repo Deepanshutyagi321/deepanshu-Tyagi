@@ -93,15 +93,15 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="w-screen h-screen background flex flex-col border-2 border-slate-300 mt-10">
+      <section id="contact" className="w-screen h-screen background flex flex-col border-2 border-slate-300 mt-10 text-white">
         <div className="mt-20 ml-10 md:ml-20">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4 font-medium">Want to start a project</h1>
-          <h1 className="text-3xl md:text-5xl font-bold mb-4 font-medium">together? Get in touch</h1>
+          <h1 className="text-3xl md:text-5xl font-bold mb-4 font-medium text-white">Want to start a project</h1>
+          <h1 className="text-3xl md:text-5xl font-bold mb-4 font-medium text-white">together? Get in touch</h1>
         </div>
         <div className="ml-10 md:ml-20 mt-5 md:mt-10 md:mt-20">
-          <p className="font-medium">Email</p>
+          <p className="font-medium text-white">Email</p>
           <div className="flex flex-col md:flex-row items-start md:items-center mt-4">
-            <p className="font-medium text-lg md:text-xl">deepanshutyagi97208@gmail.com</p>
+            <p className="font-medium text-lg md:text-xl text-white">deepanshutyagi97208@gmail.com</p>
             <Button
               className="bg-inherit text-white mt-4 md:mt-0 md:ml-4 text-base text-sm md:text-lg hover:opacity-70 rounded-3xl border-2 border-slate-300 transition-transform duration-300 ease-in-out hover:scale-105"
               onClick={() => navigator.clipboard.writeText("deepanshutyagi97208@gmail.com")}
@@ -112,8 +112,8 @@ export default function Home() {
         </div>
 
         <div className="ml-10 md:ml-20 mt-8 md:mt-16">
-          <p className="font-medium">Social</p>
-          <span className="flex items-center mt-2 md:mt-5 space-x-4 font-medium font-bold text-sm md:text-lg">
+          <p className="font-medium text-white">Social</p>
+          <span className="flex items-center mt-2 md:mt-5 space-x-4 font-medium font-bold text-sm md:text-lg text-white">
             <h3><a href="https://www.linkedin.com/in/deepanshu-tyagi-z14/">LinkedIn</a></h3>
             <h3><a href="https://github.com/Deepanshutyagi321">GitHub</a></h3>
             <h3><a href="https://x.com/Deepans22338409">Twitter</a></h3>

@@ -15,38 +15,46 @@ import tspic from "../images/6422234.svg";
 import mongodbpic from "../images/mongodb.svg";
 import expresspic from "../images/images.png";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Navbar } from "@/components/navbar";
 
 export default function Home() {
   useEffect(() => {
     AOS.init({ duration: 1000 }); // You can set the duration
   }, []);
 
+  const [isNavbarOpen, setNavbarOpen] = useState(false); // Track navbar state
+
   return (
-    <div className="bg-slate-50 w-auto">
+
+    <div className="bg-slate-50 w-auto " >
+      <div className="sticky top-0 z-50">
+        <Navbar setNavbarOpen = {setNavbarOpen}/>
+      </div>
+       <div  className={`transition-all duration-300 ease-in-out ${isNavbarOpen ? 'filter blur-sm' : ''}`}>
       {/* Introduction Section */}
       <section id="introduction" className="flex items-center w-full h-screen bg-slate-50">
         <div className="ml-10" data-aos="fade-up">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-black font-medium">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-black font-medium ">
             Hi&nbsp;I&apos;m Deepanshu Tyagi
           </h1>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl mt-5 text-black font-medium">MERN Developer.</h2>
+          <h2 className="text-3xl md:text-5xl lg:text-6xl mt-5 text-black font-medium ">MERN Developer</h2>
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="w-screen h-screen bg-slate-50 flex items-center justify-center border-2 border-slate-300">
+      <section id="about" className="w-screen h-screen bg-slate-50 flex items-center justify-center border-2 border-slate-300  scroll-margin-top: 80px;">
         <div className="text-center slide-up" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold font-medium mb-4 text-black">About Me</h2>
-          <p className="max-w-3xl mx-auto text-lg text-black">
+          <p className="max-w-3xl mx-auto text-lg text-black shedow-md">
             Hi I&apos;m&nbsp;Deepanshu Tyagi, a web developer passionate about creating user-friendly applications with React. I thrive on solving frontend-backend integration challenges and am constantly learning new technologies to improve my skills. With a background in computer science, I&apos;m also exploring advanced concepts like API optimization and message aggregation to enhance application performance. I am a passionate full stack developer with experience in building high-quality web applications...
           </p>
         </div>
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="w-screen h-auto bg-slate-50 text-white flex flex-col">
+      <section id="skills" className="w-screen h-auto bg-slate-50 text-white flex flex-col  ">
         <div className="flex items-center justify-center">
           <h1 className="text-3xl md:text-4xl font-bold text-black mt-12 mb-8">Skills</h1>
         </div>
@@ -114,12 +122,14 @@ export default function Home() {
         <div className="ml-10 md:ml-20 mt-8 md:mt-16">
           <p className="font-medium text-white">Social</p>
           <span className="flex items-center mt-2 md:mt-5 space-x-4 font-medium font-bold text-sm md:text-lg text-white">
-            <h3><a href="https://www.linkedin.com/in/deepanshu-tyagi-z14/">LinkedIn</a></h3>
-            <h3><a href="https://github.com/Deepanshutyagi321">GitHub</a></h3>
-            <h3><a href="https://x.com/Deepans22338409">Twitter</a></h3>
+            <h3><a href="https://www.linkedin.com/in/deepanshu-tyagi-z14/ " className=" inline-block hover:underline transition-transform duration-300 ease-in-out hover:scale-105">LinkedIn</a></h3>
+            <h3><a href="https://github.com/Deepanshutyagi321" className=" inline-block hover:underline transition-transform duration-300 ease-in-out hover:scale-105">GitHub</a></h3>
+            <h3><a href="https://x.com/Deepans22338409" className=" inline-block hover:underline transition-transform duration-300 ease-in-out hover:scale-105">Twitter</a></h3>
           </span>
         </div>
       </section>
+      </div>
     </div>
+
   );
 }

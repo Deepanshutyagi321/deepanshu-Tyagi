@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import {Montserrat} from "next/font/google"
 import "./globals.css";
-
+import { Analytics } from "@vercel/analytics/react"
 
 // Define local fonts     
 const geistSans = localFont({
@@ -40,7 +40,7 @@ export default function RootLayout({
       >
         
         {children }
-        
+        <Analytics />
       </body>
     </html>
   );
